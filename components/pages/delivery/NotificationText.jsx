@@ -10,7 +10,7 @@ import React, { useState, useEffect, useRef } from "react";
 
 export default function NotificationText() {
   // Fetch messages (this will automatically update when new messages arrive)
-  const messages = useQuery(api.users.getMessages) || [];
+  // const messages = useQuery(api.users.getMessages) || [];
 
   const [text, setText] = useState("");
   const [status, setStatus] = useState(false);
@@ -40,16 +40,16 @@ export default function NotificationText() {
   };
 
   // Mutation to create new message
-  const createMessage = useMutation(api.users.createMessage);
-  const handleSubmit = async () => {
-    try {
-      await createMessage({ text, status });
-      setText(""); // Clear input after submitting
-      setStatus(false);
-    } catch (error) {
-      console.error("Error creating message:", error);
-    }
-  };
+  // const createMessage = useMutation(api.users.createMessage);
+  // const handleSubmit = async () => {
+  //   try {
+  //     await createMessage({ text, status });
+  //     setText(""); // Clear input after submitting
+  //     setStatus(false);
+  //   } catch (error) {
+  //     console.error("Error creating message:", error);
+  //   }
+  // };
 
   if (!messages) {
     return <h1>Loading...</h1>;
