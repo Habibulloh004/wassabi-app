@@ -13,13 +13,38 @@ export const put = mutation({
     spot_id: v.float64(),
     phone: v.string(),
     products: v.any(),
+    service_mode: v.float64(),
+    payment_method: v.string(),
+    total: v.float64(),
+    chat_id: v.float64(),
+    location: v.object({
+      latitude: v.float64(),
+      longitude: v.float64(),
+    }),
+    status: v.string(),
   },
   handler: async (ctx, args) => {
-    const { spot_id, phone, products } = args;
+    const {
+      spot_id,
+      phone,
+      products,
+      service_mode,
+      payment_method,
+      total,
+      chat_id,
+      location,
+      status,
+    } = args;
     const newOrder = await ctx.db.insert("order", {
       spot_id,
       phone,
-      products
+      products,
+      service_mode,
+      payment_method,
+      total,
+      chat_id,
+      location,
+      status,
     });
     return newOrder;
   },
@@ -32,6 +57,15 @@ export const patch = mutation({
     spot_id: v.float64(),
     phone: v.string(),
     products: v.any(),
+    service_mode: v.float64(),
+    payment_method: v.string(),
+    total: v.float64(),
+    chat_id: v.float64(),
+    location: v.object({
+      latitude: v.float64(),
+      longitude: v.float64(),
+    }),
+    status: v.string(),
   },
   handler: async (ctx, args) => {
     const findOrder = await ctx.db

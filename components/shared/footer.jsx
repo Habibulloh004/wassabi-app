@@ -34,8 +34,8 @@ export default function Footer() {
           >
             Открыть карту
           </div>
-          <div onClick={exitToast} className="absolute right-3 bottom-3 p-3 bg-red-300 rounded-full flex justify-center items-center cursor-pointer">
-            <ImExit className="text-2xl text-red-600 ml-1" />
+          <div onClick={exitToast} className="absolute right-3 bottom-3 p-2 pl-3 pt-3 bg-red-300 rounded-full flex justify-center items-center cursor-pointer">
+            <ImExit className="text-xl text-red-600 " />
           </div>
         </div>
       </div>
